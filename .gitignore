@@ -1,0 +1,8 @@
+*
+*/
+
+# Whitelists
+!.gitignore
+!Project-Creator.py
+!*/
+!sketch_TEMPLATE/**
