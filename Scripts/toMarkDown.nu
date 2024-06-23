@@ -1,0 +1,1 @@
+1..8 | each {|x| (($x) | into string | "sketch_" + $in + "/sketch_" + $in + ".pde" | if ($in | path exists) { open | [ "# " , $x , "\n```processing\n" , $in , "\n```\n"]| str join |print })  } | ignore
