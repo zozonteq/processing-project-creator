@@ -1,1 +1,1 @@
-1..8 | each {|x| (($x) | into string | "sketch_" + $in + "/sketch_" + $in + ".pde" | if ($in | path exists) { open | [ "# " , $x , "\n```processing\n" , $in , "\n```\n"]| str join |print })  } | ignore
+ls | get name | each {|x| ($x | parse -r 'sketch_.+' | length | if ($in == 1) { [$x , "/" , $x , ".pde"] | str join | if ( $in | path exists ) { [$x , "/" , $x , ".pde"] | str join | open $in | ["\n# ", $x , "\n```processing\n" , $in  , "\n```" , ] | str join | print}} )} | ignore
